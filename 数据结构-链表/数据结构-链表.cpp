@@ -63,7 +63,7 @@ int length(linkNode* head) {
 	}
 	return len;
 }
-
+//bad
 void reverseLinkNode(linkNode* head) {
 	linkNode* p;
 	p = head;
@@ -79,6 +79,19 @@ void reverseLinkNode(linkNode* head) {
 		ans.push_back(vecLinkNode[max - i]);
 		cout << vecLinkNode[max - i ] << " ";
 	}
+}
+linkNode* reverseLinkNodeGood(linkNode* head) {
+	linkNode* p1, *p2, *p3;
+	p1 = head;
+	p2 = p1->next;
+	while (p2 != NULL) {
+		p1 = p2->next;
+		p1 = p2;
+		p2 = p3;
+	}
+	head->next = NULL;
+	head = p1;
+	return head;
 }
 int main() {
 	node* nodeP;
